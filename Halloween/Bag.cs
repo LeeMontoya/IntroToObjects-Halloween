@@ -17,26 +17,32 @@ namespace Halloween
         /// </summary>
         public  Bag()
         {
-            Candies = new List<Candy>();
+            this.Candies = new List<Candy>();
         }
 
+        //thid is a method
         public void AddCandy(Candy candy)
         {
-            Candies.Add(candy);
+            this.Candies.Add(candy);
         }
 
         public void AddCandy(string candyName)
         {
-            Candies.Add(new Candy(candyName));
+            this.Candies.Add(new Candy(candyName));
         }
 
         /// <summary>
-        /// This is a method, a function that performs an action on the object
+        /// This is a function, a function that performs an action on the object
         /// </summary>
         /// <returns>The number of candies in the bag</returns>
         public int CandyCount()
         {
             return this.Candies.Count();
+        }
+
+        public int NumberOfCandyVariety()
+        {
+            return this.Candies.Select(x => x.Name).Distinct().Count();
         }
     }
 }
